@@ -28,9 +28,45 @@
  *      you need to use loops and fill the cards deck in a loop (Hint: You should use `for` loops, )
  *
  */
-let cards = []; // You will use this array in step 6
+ let cards = [];
+
+class Card {
+  
+  constructor (color,number){
+    this.color = color;
+    this.number = number;
+    
+    
+  }
+  image() {
+    return `./images/${this.color}_${this.number}.png`
+  }
+}
+
+
+
+ // You will use this array in step 6
 
 // Continue the code here 👇🏻
+let firstDig = 0;
+console.log(String(firstDig)[1])
+for (let i = 0; i < 40; i++) {
+  firstDig = String(i)[1];
+  firstDig = Number(firstDig)
+
+  if (i<10){
+    cards.push(new Card("Red",i))
+  } else if (i<20){
+    cards.push(new Card("Yellow",firstDig))
+  }else if (i<30){
+    cards.push(new Card("Blue",firstDig))
+  }else if (i<40){
+    cards.push(new Card("Green",firstDig))
+  }
+  
+}
+
+
 
 /**
  *
@@ -44,3 +80,5 @@ function render(array) {
 }
 
 render(cards);
+let today = new Date(day)
+console.log(today)
